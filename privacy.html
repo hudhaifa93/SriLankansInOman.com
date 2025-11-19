@@ -40,6 +40,9 @@
     gtag('config', 'G-BYNFTJ6QP1');
   </script>
   <link rel="stylesheet" href="assets/css/custom.css" />
+  <link rel="stylesheet" href="assets/css/theme-heritage.css" />
+  <link rel="stylesheet" href="assets/css/theme-tea-desert.css" />
+  <link rel="stylesheet" href="assets/css/theme-ocean-breeze.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -149,12 +152,16 @@
       </button>
       <nav class="hidden gap-6 text-sm font-medium text-brand-slate lg:flex" aria-label="Primary navigation">
         <a href="index.html" class="transition hover:text-brand-red">Home</a>
+        <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
+        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
         <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
       </nav>
     </div>
     <nav id="mobileNav" class="border-t border-gray-100 bg-white px-6 text-sm font-medium text-brand-slate lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 pointer-events-none py-0" aria-label="Mobile navigation">
       <div class="flex flex-col gap-2">
         <a href="index.html" class="block py-2 transition hover:text-brand-red">Home</a>
+        <a href="business-directory.html" class="block py-2 transition hover:text-brand-red">Business Directory</a>
+        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="block py-2 transition hover:text-brand-red">Marketplace</a>
         <a href="contact.html" class="block py-2 transition hover:text-brand-red">Contact</a>
       </div>
     </nav>
@@ -210,6 +217,8 @@
       </div>
       <div class="flex items-center justify-center gap-4">
         <a href="index.html" class="transition hover:text-brand-red">Home</a>
+        <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
+        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
         <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
         <a href="privacy.html" class="transition hover:text-brand-red">Privacy</a>
         <a href="terms.html" class="transition hover:text-brand-red">Terms</a>
@@ -217,10 +226,74 @@
     </div>
   </footer>
 
+  <!-- Theme Switcher Button -->
+  <button 
+    type="button" 
+    class="theme-switcher" 
+    aria-label="Toggle theme" 
+    title="Switch between themes"
+    id="themeSwitcher"
+  >
+    🎨
+  </button>
+
   <script>
     const now = new Date();
     document.getElementById('year').textContent = now.getFullYear();
     document.getElementById('updated').textContent = now.toISOString().split('T')[0];
+  </script>
+  <script>
+    // Theme Switcher Functionality - Cycles through 4 themes
+    (function() {
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      const html = document.documentElement;
+      
+      const themes = [
+        { name: 'default', icon: '🎨', title: 'Default Theme' },
+        { name: 'heritage', icon: '🏛️', title: 'Heritage Theme (Sri Lankan & Omani Flags)' },
+        { name: 'tea-desert', icon: '🌿', title: 'Tea & Desert Theme' },
+        { name: 'ocean-breeze', icon: '🌊', title: 'Ocean Breeze Theme' }
+      ];
+      
+      // Get saved theme or default to 'default'
+      const getTheme = () => {
+        return localStorage.getItem('theme') || 'default';
+      };
+      
+      // Get current theme index
+      const getCurrentThemeIndex = () => {
+        const currentTheme = getTheme();
+        const index = themes.findIndex(t => t.name === currentTheme);
+        return index >= 0 ? index : 0;
+      };
+      
+      // Set theme
+      const setTheme = (themeName) => {
+        const theme = themes.find(t => t.name === themeName) || themes[0];
+        
+        if (themeName === 'default') {
+          html.removeAttribute('data-theme');
+        } else {
+          html.setAttribute('data-theme', themeName);
+        }
+        
+        themeSwitcher.textContent = theme.icon;
+        themeSwitcher.title = theme.title;
+        localStorage.setItem('theme', themeName);
+      };
+      
+      // Initialize theme on page load
+      const currentTheme = getTheme();
+      setTheme(currentTheme);
+      
+      // Cycle through themes on button click
+      themeSwitcher.addEventListener('click', () => {
+        const currentIndex = getCurrentThemeIndex();
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+        setTheme(nextTheme.name);
+      });
+    })();
   </script>
   <script>
     (function () {

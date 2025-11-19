@@ -1,0 +1,201 @@
+/* Theme 3: Ocean Breeze - Coastal Blues & Tropical Greens */
+
+:root[data-theme="ocean-breeze"] {
+  --brand-primary: #006994;        /* Deep ocean blue */
+  --brand-primary-light: #0085B8;
+  --brand-primary-dark: #004D6B;
+  --brand-secondary: #00A8CC;       /* Bright turquoise */
+  --brand-secondary-light: #1FC5E8;
+  --brand-secondary-dark: #0085A3;
+  --brand-accent: #2D8659;          /* Tropical green */
+  --brand-accent-light: #3DA870;
+  --brand-accent-dark: #1F5C3F;
+  --brand-bg: #F0F7FA;              /* Light sky blue */
+  --brand-bg-light: #F8FCFF;
+  --brand-bg-dark: #E0EDF5;
+  --brand-text: #1A2E3A;            /* Deep blue-gray */
+  --brand-text-light: #3A4E5A;
+  --brand-text-muted: #6A7E8A;
+  --brand-border: #C8D8E5;
+  --brand-border-light: #E0EDF5;
+  --brand-shadow: rgba(0, 105, 148, 0.2);
+  --brand-shadow-accent: rgba(0, 168, 204, 0.25);
+}
+
+[data-theme="ocean-breeze"] {
+  --brand-red: var(--brand-primary);
+  --brand-slate: var(--brand-text);
+  --brand-light: var(--brand-bg);
+}
+
+/* Body and base */
+[data-theme="ocean-breeze"] body {
+  background-color: var(--brand-bg) !important;
+  color: var(--brand-text) !important;
+}
+
+/* Backgrounds */
+[data-theme="ocean-breeze"] .bg-brand-light,
+[data-theme="ocean-breeze"] .bg-gradient-to-b.from-brand-light {
+  background-color: var(--brand-bg) !important;
+  background-image: linear-gradient(to bottom, var(--brand-bg), var(--brand-bg-light)) !important;
+}
+
+[data-theme="ocean-breeze"] .bg-white {
+  background-color: var(--brand-bg-light) !important;
+}
+
+[data-theme="ocean-breeze"] .bg-white\/90 {
+  background-color: rgba(240, 247, 250, 0.9) !important;
+}
+
+/* Text colors */
+[data-theme="ocean-breeze"] .text-brand-slate {
+  color: var(--brand-text) !important;
+}
+
+[data-theme="ocean-breeze"] .text-brand-slate\/80 {
+  color: var(--brand-text-light) !important;
+}
+
+[data-theme="ocean-breeze"] .text-brand-slate\/70 {
+  color: var(--brand-text-muted) !important;
+}
+
+[data-theme="ocean-breeze"] .text-brand-red {
+  color: var(--brand-primary) !important;
+}
+
+[data-theme="ocean-breeze"] .hover\:text-brand-red:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* Borders */
+[data-theme="ocean-breeze"] .border-gray-100,
+[data-theme="ocean-breeze"] .border-t.border-gray-100,
+[data-theme="ocean-breeze"] .border-b.border-gray-100 {
+  border-color: var(--brand-border) !important;
+}
+
+[data-theme="ocean-breeze"] .border-brand-red\/10 {
+  border-color: rgba(0, 105, 148, 0.1) !important;
+}
+
+[data-theme="ocean-breeze"] .border-brand-red\/20 {
+  border-color: rgba(0, 105, 148, 0.2) !important;
+}
+
+[data-theme="ocean-breeze"] .border-brand-slate\/20 {
+  border-color: rgba(26, 46, 58, 0.2) !important;
+}
+
+/* Buttons */
+[data-theme="ocean-breeze"] .btn-primary {
+  background-color: var(--brand-primary) !important;
+  color: white !important;
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 15px 35px var(--brand-shadow) !important;
+}
+
+[data-theme="ocean-breeze"] .btn-primary:hover {
+  background-color: var(--brand-primary-dark) !important;
+  box-shadow: 0 15px 35px rgba(0, 105, 148, 0.35) !important;
+}
+
+[data-theme="ocean-breeze"] .btn-outline {
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+}
+
+[data-theme="ocean-breeze"] .btn-outline:hover {
+  background-color: var(--brand-primary) !important;
+  color: white !important;
+}
+
+[data-theme="ocean-breeze"] .btn-outline.border-white {
+  border-color: white !important;
+  color: white !important;
+}
+
+[data-theme="ocean-breeze"] .btn-outline.border-white:hover {
+  background-color: white !important;
+  color: var(--brand-text) !important;
+}
+
+/* Focus states */
+[data-theme="ocean-breeze"] .focus-visible\:outline-brand-red:focus-visible,
+[data-theme="ocean-breeze"] .focus\:bg-brand-red:focus {
+  outline-color: var(--brand-primary) !important;
+  background-color: var(--brand-primary) !important;
+}
+
+[data-theme="ocean-breeze"] .hover\:border-brand-red:hover {
+  border-color: var(--brand-primary) !important;
+}
+
+/* Gradients */
+[data-theme="ocean-breeze"] .bg-gradient-to-br.from-brand-red.to-brand-red\/80,
+[data-theme="ocean-breeze"] section.bg-gradient-to-br.from-brand-red {
+  background-image: linear-gradient(to bottom right, var(--brand-primary), var(--brand-secondary)) !important;
+}
+
+/* SVG */
+[data-theme="ocean-breeze"] svg path[stroke="#E63946"] {
+  stroke: var(--brand-primary) !important;
+}
+
+/* White text on colored backgrounds */
+[data-theme="ocean-breeze"] .text-white {
+  color: white !important;
+}
+
+[data-theme="ocean-breeze"] .text-white\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="ocean-breeze"] .border-white {
+  border-color: white !important;
+}
+
+[data-theme="ocean-breeze"] .hover\:bg-white:hover {
+  background-color: white !important;
+}
+
+[data-theme="ocean-breeze"] .hover\:text-brand-slate:hover {
+  color: var(--brand-text) !important;
+}
+
+/* Header */
+[data-theme="ocean-breeze"] header {
+  background-color: rgba(240, 247, 250, 0.9) !important;
+}
+
+/* Links */
+[data-theme="ocean-breeze"] a.transition.hover\:text-brand-red:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* Theme switcher */
+[data-theme="ocean-breeze"] .theme-switcher {
+  background-color: var(--brand-primary) !important;
+}
+
+/* Hero Section - Sri Lankan Map Outline - Ocean Breeze Theme */
+[data-theme="ocean-breeze"] .hero-section .sri-lanka-outline {
+  opacity: 0.35 !important;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(100%) saturate(3000%) hue-rotate(180deg) brightness(1) !important;
+  mix-blend-mode: multiply;
+}
+
+[data-theme="ocean-breeze"] .hero-section .sri-lanka-map-overlay {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at center, rgba(0, 105, 148, 0.22) 0%, rgba(0, 168, 204, 0.15) 40%, transparent 70%) !important;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+

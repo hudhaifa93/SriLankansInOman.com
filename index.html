@@ -40,6 +40,9 @@
     gtag('config', 'G-BYNFTJ6QP1');
   </script>
   <link rel="stylesheet" href="assets/css/custom.css" />
+  <link rel="stylesheet" href="assets/css/theme-heritage.css" />
+  <link rel="stylesheet" href="assets/css/theme-tea-desert.css" />
+  <link rel="stylesheet" href="assets/css/theme-ocean-breeze.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -96,6 +99,46 @@
             animation: fadeInView 0.9s ease-out forwards;
             animation-timeline: view();
             animation-range: entry 25% cover 35%;
+          }
+        }
+        .animate-pulse-border {
+          position: relative;
+        }
+        .animate-pulse-border::before {
+          content: '';
+          position: absolute;
+          inset: -4px;
+          border-radius: 9999px;
+          border: 3px solid rgba(230, 57, 70, 0.6);
+          animation: pulseBorderRing 2s ease-in-out infinite;
+          pointer-events: none;
+          z-index: -1;
+        }
+        @keyframes pulseBorderRing {
+          0% {
+            opacity: 0.8;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.2;
+            transform: scale(1.2);
+          }
+          100% {
+            opacity: 0.8;
+            transform: scale(1);
+          }
+        }
+        .animate-pulse-icon {
+          animation: pulseIcon 2s ease-in-out infinite;
+        }
+        @keyframes pulseIcon {
+          0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scale(1.1);
           }
         }
       }
@@ -186,12 +229,16 @@
       </button>
       <nav class="hidden gap-6 text-sm font-medium text-brand-slate lg:flex" aria-label="Primary navigation">
         <a href="index.html" class="transition hover:text-brand-red">Home</a>
+        <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
+        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
         <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
       </nav>
     </div>
     <nav id="mobileNav" class="border-t border-gray-100 bg-white px-6 text-sm font-medium text-brand-slate lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 pointer-events-none py-0" aria-label="Mobile navigation">
       <div class="flex flex-col gap-2">
         <a href="index.html" class="block py-2 transition hover:text-brand-red">Home</a>
+        <a href="business-directory.html" class="block py-2 transition hover:text-brand-red">Business Directory</a>
+        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="block py-2 transition hover:text-brand-red">Marketplace</a>
         <a href="contact.html" class="block py-2 transition hover:text-brand-red">Contact</a>
       </div>
     </nav>
@@ -199,44 +246,226 @@
 
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-brand-light to-white">
-      <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-20 text-center">
-        <p class="text-xs uppercase tracking-[0.4em] text-brand-red">Community First</p>
-          <h1 class="text-3xl font-bold tracking-tight text-brand-slate sm:text-4xl md:text-5xl animate-fade-up">Connecting Sri Lankans Living in Oman</h1>
-            <p class="max-w-2xl text-base leading-relaxed text-brand-slate/80">An independent project by a Sri Lankan expat in Oman, created to share helpful resources and keep our community connected.</p>
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="https://wa.me/message/RNHXTFFSGIUKK1" target="_blank" rel="noopener" class="btn-primary" aria-label="Open WhatsApp chat to collaborate with SriLankansInOman">Collaborate via WhatsApp</a>
+    <section class="hero-section relative bg-gradient-to-b from-brand-light to-white overflow-hidden">
+      <!-- Sri Lankan Map Outline Background -->
+      <div class="absolute inset-0 pointer-events-none z-0 sri-lanka-map-container overflow-hidden">
+        <div class="relative w-full h-full flex items-center justify-center p-8">
+          <div class="relative w-full h-full max-w-5xl max-h-full flex items-center justify-center">
+            <img 
+              src="assets/img/outline.png" 
+              alt="" 
+              class="sri-lanka-outline w-full h-full max-w-full max-h-full object-contain"
+              aria-hidden="true"
+            />
+            <!-- Colored overlay for enhanced visibility -->
+            <div class="absolute inset-0 sri-lanka-map-overlay"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Subtle gradient overlay for better text readability -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-light/20 pointer-events-none z-[1]"></div>
+      
+      <!-- Main Content -->
+      <div class="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-24 md:py-32 text-center">
+        <p class="text-xs uppercase tracking-[0.4em] text-brand-red font-semibold">Community First</p>
+        <h1 class="text-3xl font-bold tracking-tight text-brand-slate sm:text-4xl md:text-5xl lg:text-6xl animate-fade-up">
+          Connecting Sri Lankans<br class="hidden sm:block" /> Living in Oman
+        </h1>
+        <p class="max-w-2xl text-base md:text-lg leading-relaxed text-brand-slate/80">
+          An independent project by a Sri Lankan expat in Oman, created to share helpful resources and keep our community connected.
+        </p>
+        
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-4">
+          <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="btn-primary animate-pulse-border" aria-label="Visit the Sri Lankan community marketplace">Visit Marketplace</a>
+          <a href="https://wa.me/message/RNHXTFFSGIUKK1" target="_blank" rel="noopener" class="btn-outline" aria-label="Open WhatsApp chat to collaborate with SriLankansInOman">Collaborate via WhatsApp</a>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
     <section class="border-y border-gray-100 bg-white">
-      <div class="mx-auto max-w-5xl px-6 py-16">
-        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <h2 class="text-2xl font-bold tracking-tight text-brand-slate">About This Initiative</h2>
-                <p class="mt-4 leading-relaxed text-brand-slate/80">SriLankansInOman.com is a small passion project created by a Sri Lankan expat in Muscat. It’s being built slowly and thoughtfully to give our community one place to find useful information, feel connected, and access tools that make life a little easier here in Oman. More features and updates will be introduced as the project grows.</p>
+      <div class="mx-auto max-w-6xl px-6 py-16">        
+        <div class="grid gap-8 lg:grid-cols-3 lg:gap-12 lg:items-start">
+          <!-- Section 1: About Text -->
+          <div class="lg:border-r lg:border-gray-200 lg:pr-8">
+            <h3 class="text-xl font-bold tracking-tight text-brand-slate mb-4">About This Initiative</h3>
+            <p class="leading-relaxed text-brand-slate/80">SriLankansInOman.com is a small passion project created by a Sri Lankan expat in Muscat. It's being built slowly and thoughtfully to give our community one place to find useful information, feel connected, and access tools that make life a little easier here in Oman. More features and updates will be introduced as the project grows.</p>
+          </div>
+          
+          <!-- Section 2: What to expect -->
+          <div class="lg:border-r lg:border-gray-200 lg:pr-8">
+            <h3 class="text-xl font-bold tracking-tight text-brand-red mb-4">What to expect:</h3>
+            <ul class="space-y-3 text-sm leading-relaxed text-brand-slate/80">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-red mt-1">•</span>
+                <span>Useful resources and community-focused information relevant to Sri Lankans living in Oman.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-red mt-1">•</span>
+                <span>Guides, experiences, and tips shared from real day-to-day life in Oman.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-red mt-1">•</span>
+                <span>A community marketplace where members can buy and sell items within our community.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-red mt-1">•</span>
+                <span>A gradually expanding platform with new sections added step-by-step.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-red mt-1">•</span>
+                <span>Open invitations for collaborators, supporters, or anyone interested in contributing ideas to help grow this community hub.</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Section 3: Latest Updates -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <svg class="w-5 h-5 text-brand-red animate-pulse-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <h3 class="text-xl font-bold tracking-tight text-brand-slate">Latest Updates</h3>
             </div>
-            <div class="rounded-3xl border border-brand-red/10 bg-brand-light p-6">
-              <p class="text-base font-bold tracking-tight text-brand-red">What to expect:</p>
-                <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-relaxed text-brand-slate/80">
-                  <li>Useful resources and community-focused information relevant to Sri Lankans living in Oman.</li>
-                  <li>Guides, experiences, and tips shared from real day-to-day life in Oman.</li>
-                  <li>A gradually expanding platform with new sections added step-by-step.</li>
-                  <li>Open invitations for collaborators, supporters, or anyone interested in contributing ideas to help grow this community hub.</li>
-                </ul>
+            <p class="text-xs text-brand-slate/60 mb-4">Last updated: November 20, 2025</p>
+            <div class="space-y-4">
+              <div class="border-l-4 border-brand-red pl-3 py-1">
+                <p class="text-sm font-medium text-brand-slate">Implementation of Business Directory</p>
+                <p class="text-xs text-brand-slate/70 mt-1 leading-relaxed">Discover and connect with Sri Lankan-owned businesses in Oman. Browse trusted local businesses, find services, and support our community entrepreneurs.</p>
+                <a href="business-directory.html" class="text-xs text-brand-red hover:text-brand-red/80 transition font-medium mt-2 inline-block">Explore →</a>
+              </div>
+              <div class="border-l-4 border-brand-red pl-3 py-1">
+                <p class="text-sm font-medium text-brand-slate">Implementation of Community Marketplace</p>
+                <p class="text-xs text-brand-slate/70 mt-1 leading-relaxed">A dedicated marketplace for our community members to buy and sell items within the Sri Lankan community in Oman.</p>
+                <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="text-xs text-brand-red hover:text-brand-red/80 transition font-medium mt-2 inline-block">Visit →</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Support Me Section -->
-    <section class="bg-white">
-      <div class="scroll-fade mx-auto max-w-4xl px-6 py-16 text-center">
-        <h3 class="text-2xl font-bold tracking-tight text-brand-red">Support Me in Developing This Community Website</h3>
-        <p class="mt-4 leading-relaxed text-brand-slate/80">I maintain this platform on my own time, balancing a full-time job and family life. If you believe in the promise of a Sri Lankan community hub in Oman, please reach out with your ideas, skills, or sponsorship so we can keep improving together.</p>
-        <a href="https://wa.me/message/RNHXTFFSGIUKK1" target="_blank" rel="noopener" class="btn-primary mt-6" aria-label="Message on WhatsApp to support the project">Message Me on WhatsApp to Support the Project</a>
+    <!-- Marketplace Section -->
+    <section class="border-y border-gray-100 bg-gradient-to-br from-brand-light to-white">
+      <div class="scroll-fade mx-auto max-w-6xl px-6 py-16">
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
+          <!-- Image Section -->
+          <div class="lg:col-span-6 order-2 lg:order-1">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-100 aspect-[4/3]">
+              <img src="assets/img/marketplace-image.jpg" alt="Sri Lankan Community Marketplace in Oman" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          
+          <!-- Content Section -->
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <h2 class="text-3xl font-bold tracking-tight text-brand-slate mb-4">Community Marketplace</h2>
+            <p class="text-lg leading-relaxed text-brand-slate/80 mb-6">Connect, buy, and sell within our Sri Lankan community in Oman. Our marketplace is built specifically for our community members to safely trade items, find what you need, and support each other locally.</p>
+            
+            <div class="grid gap-4 sm:grid-cols-2 mb-8">
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">Browse Items</p>
+                  <p class="text-sm text-brand-slate/70">From trusted community members</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">List Your Items</p>
+                  <p class="text-sm text-brand-slate/70">Sell within the community</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">Connect</p>
+                  <p class="text-sm text-brand-slate/70">With fellow Sri Lankans</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">Safe Trading</p>
+                  <p class="text-sm text-brand-slate/70">Community-focused environment</p>
+                </div>
+              </div>
+            </div>
+            
+            <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="btn-primary inline-block" aria-label="Visit the community marketplace">Explore Marketplace</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Directory Section -->
+    <section class="border-y border-gray-100 bg-gradient-to-br from-white to-brand-light">
+      <div class="scroll-fade mx-auto max-w-6xl px-6 py-16">
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
+          <!-- Content Section -->
+          <div class="lg:col-span-6 order-2 lg:order-1">
+            <h2 class="text-3xl font-bold tracking-tight text-brand-slate mb-4">Sri Lankan Business Directory</h2>
+            <p class="text-lg leading-relaxed text-brand-slate/80 mb-6">Discover trusted businesses owned by Sri Lankans in Oman. Connect with local entrepreneurs, find services, and support our community businesses. Browse our directory to find everything from tech services to retail shops.</p>
+            
+            <div class="grid gap-4 sm:grid-cols-2 mb-8">
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">Find Businesses</p>
+                  <p class="text-sm text-brand-slate/70">Search by name or service</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">View Locations</p>
+                  <p class="text-sm text-brand-slate/70">Find shops near you</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">Direct Contact</p>
+                  <p class="text-sm text-brand-slate/70">Connect via WhatsApp</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-slate mb-1">Trusted Directory</p>
+                  <p class="text-sm text-brand-slate/70">Verified community businesses</p>
+                </div>
+              </div>
+            </div>
+            
+            <a href="business-directory.html" class="btn-primary inline-block" aria-label="Browse the business directory">Browse Business Directory</a>
+          </div>
+          
+          <!-- Image Section -->
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-100 aspect-[4/3]">
+              <img src="assets/img/business-directory-image.jpg" alt="Sri Lankan Business Directory in Oman" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -259,6 +488,8 @@
       </div>
       <div class="flex items-center justify-center gap-4">
         <a href="index.html" class="transition hover:text-brand-red">Home</a>
+        <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
+        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
         <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
         <a href="privacy.html" class="transition hover:text-brand-red">Privacy</a>
         <a href="terms.html" class="transition hover:text-brand-red">Terms</a>
@@ -266,8 +497,72 @@
     </div>
   </footer>
 
+  <!-- Theme Switcher Button -->
+  <button 
+    type="button" 
+    class="theme-switcher" 
+    aria-label="Toggle theme" 
+    title="Switch between themes"
+    id="themeSwitcher"
+  >
+    🎨
+  </button>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // Theme Switcher Functionality - Cycles through 4 themes
+    (function() {
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      const html = document.documentElement;
+      
+      const themes = [
+        { name: 'default', icon: '🎨', title: 'Default Theme' },
+        { name: 'heritage', icon: '🏛️', title: 'Heritage Theme (Sri Lankan & Omani Flags)' },
+        { name: 'tea-desert', icon: '🌿', title: 'Tea & Desert Theme' },
+        { name: 'ocean-breeze', icon: '🌊', title: 'Ocean Breeze Theme' }
+      ];
+      
+      // Get saved theme or default to 'default'
+      const getTheme = () => {
+        return localStorage.getItem('theme') || 'default';
+      };
+      
+      // Get current theme index
+      const getCurrentThemeIndex = () => {
+        const currentTheme = getTheme();
+        const index = themes.findIndex(t => t.name === currentTheme);
+        return index >= 0 ? index : 0;
+      };
+      
+      // Set theme
+      const setTheme = (themeName) => {
+        const theme = themes.find(t => t.name === themeName) || themes[0];
+        
+        if (themeName === 'default') {
+          html.removeAttribute('data-theme');
+        } else {
+          html.setAttribute('data-theme', themeName);
+        }
+        
+        themeSwitcher.textContent = theme.icon;
+        themeSwitcher.title = theme.title;
+        localStorage.setItem('theme', themeName);
+      };
+      
+      // Initialize theme on page load
+      const currentTheme = getTheme();
+      setTheme(currentTheme);
+      
+      // Cycle through themes on button click
+      themeSwitcher.addEventListener('click', () => {
+        const currentIndex = getCurrentThemeIndex();
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+        setTheme(nextTheme.name);
+      });
+    })();
   </script>
   <script>
     (function () {

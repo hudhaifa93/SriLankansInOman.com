@@ -1,0 +1,201 @@
+/* Theme 1: Heritage - Inspired by Sri Lankan Flag (Maroon, Gold, Green) & Omani Red */
+
+:root[data-theme="heritage"] {
+  --brand-primary: #8B1538;        /* Sri Lankan maroon */
+  --brand-primary-light: #A8325A;
+  --brand-primary-dark: #6B0F28;
+  --brand-secondary: #FFB81C;      /* Sri Lankan gold */
+  --brand-secondary-light: #FFD166;
+  --brand-secondary-dark: #E6A000;
+  --brand-accent: #C8102E;          /* Omani red */
+  --brand-accent-light: #E63946;
+  --brand-accent-dark: #9B0C1F;
+  --brand-bg: #FFF8F0;              /* Warm cream */
+  --brand-bg-light: #FFFFFF;
+  --brand-bg-dark: #F5EDE0;
+  --brand-text: #2C1810;            /* Deep brown */
+  --brand-text-light: #5A4030;
+  --brand-text-muted: #8B6F5A;
+  --brand-border: #E8D5C4;
+  --brand-border-light: #F0E5D8;
+  --brand-shadow: rgba(139, 21, 56, 0.2);
+  --brand-shadow-accent: rgba(255, 184, 28, 0.25);
+}
+
+[data-theme="heritage"] {
+  --brand-red: var(--brand-primary);
+  --brand-slate: var(--brand-text);
+  --brand-light: var(--brand-bg);
+}
+
+/* Body and base */
+[data-theme="heritage"] body {
+  background-color: var(--brand-bg) !important;
+  color: var(--brand-text) !important;
+}
+
+/* Backgrounds */
+[data-theme="heritage"] .bg-brand-light,
+[data-theme="heritage"] .bg-gradient-to-b.from-brand-light {
+  background-color: var(--brand-bg) !important;
+  background-image: linear-gradient(to bottom, var(--brand-bg), var(--brand-bg-light)) !important;
+}
+
+[data-theme="heritage"] .bg-white {
+  background-color: var(--brand-bg-light) !important;
+}
+
+[data-theme="heritage"] .bg-white\/90 {
+  background-color: rgba(255, 248, 240, 0.9) !important;
+}
+
+/* Text colors */
+[data-theme="heritage"] .text-brand-slate {
+  color: var(--brand-text) !important;
+}
+
+[data-theme="heritage"] .text-brand-slate\/80 {
+  color: var(--brand-text-light) !important;
+}
+
+[data-theme="heritage"] .text-brand-slate\/70 {
+  color: var(--brand-text-muted) !important;
+}
+
+[data-theme="heritage"] .text-brand-red {
+  color: var(--brand-primary) !important;
+}
+
+[data-theme="heritage"] .hover\:text-brand-red:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* Borders */
+[data-theme="heritage"] .border-gray-100,
+[data-theme="heritage"] .border-t.border-gray-100,
+[data-theme="heritage"] .border-b.border-gray-100 {
+  border-color: var(--brand-border) !important;
+}
+
+[data-theme="heritage"] .border-brand-red\/10 {
+  border-color: rgba(139, 21, 56, 0.1) !important;
+}
+
+[data-theme="heritage"] .border-brand-red\/20 {
+  border-color: rgba(139, 21, 56, 0.2) !important;
+}
+
+[data-theme="heritage"] .border-brand-slate\/20 {
+  border-color: rgba(44, 24, 16, 0.2) !important;
+}
+
+/* Buttons */
+[data-theme="heritage"] .btn-primary {
+  background-color: var(--brand-primary) !important;
+  color: white !important;
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 15px 35px var(--brand-shadow) !important;
+}
+
+[data-theme="heritage"] .btn-primary:hover {
+  background-color: var(--brand-primary-dark) !important;
+  box-shadow: 0 15px 35px rgba(139, 21, 56, 0.35) !important;
+}
+
+[data-theme="heritage"] .btn-outline {
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+}
+
+[data-theme="heritage"] .btn-outline:hover {
+  background-color: var(--brand-primary) !important;
+  color: white !important;
+}
+
+[data-theme="heritage"] .btn-outline.border-white {
+  border-color: white !important;
+  color: white !important;
+}
+
+[data-theme="heritage"] .btn-outline.border-white:hover {
+  background-color: white !important;
+  color: var(--brand-text) !important;
+}
+
+/* Focus states */
+[data-theme="heritage"] .focus-visible\:outline-brand-red:focus-visible,
+[data-theme="heritage"] .focus\:bg-brand-red:focus {
+  outline-color: var(--brand-primary) !important;
+  background-color: var(--brand-primary) !important;
+}
+
+[data-theme="heritage"] .hover\:border-brand-red:hover {
+  border-color: var(--brand-primary) !important;
+}
+
+/* Gradients */
+[data-theme="heritage"] .bg-gradient-to-br.from-brand-red.to-brand-red\/80,
+[data-theme="heritage"] section.bg-gradient-to-br.from-brand-red {
+  background-image: linear-gradient(to bottom right, var(--brand-primary), var(--brand-accent)) !important;
+}
+
+/* SVG */
+[data-theme="heritage"] svg path[stroke="#E63946"] {
+  stroke: var(--brand-primary) !important;
+}
+
+/* White text on colored backgrounds */
+[data-theme="heritage"] .text-white {
+  color: white !important;
+}
+
+[data-theme="heritage"] .text-white\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="heritage"] .border-white {
+  border-color: white !important;
+}
+
+[data-theme="heritage"] .hover\:bg-white:hover {
+  background-color: white !important;
+}
+
+[data-theme="heritage"] .hover\:text-brand-slate:hover {
+  color: var(--brand-text) !important;
+}
+
+/* Header */
+[data-theme="heritage"] header {
+  background-color: rgba(255, 248, 240, 0.9) !important;
+}
+
+/* Links */
+[data-theme="heritage"] a.transition.hover\:text-brand-red:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* Theme switcher */
+[data-theme="heritage"] .theme-switcher {
+  background-color: var(--brand-primary) !important;
+}
+
+/* Hero Section - Sri Lankan Map Outline - Heritage Theme */
+[data-theme="heritage"] .hero-section .sri-lanka-outline {
+  opacity: 0.35 !important;
+  filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(330deg) brightness(1) !important;
+  mix-blend-mode: multiply;
+}
+
+[data-theme="heritage"] .hero-section .sri-lanka-map-overlay {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at center, rgba(139, 21, 56, 0.22) 0%, rgba(255, 184, 28, 0.12) 40%, transparent 70%) !important;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+

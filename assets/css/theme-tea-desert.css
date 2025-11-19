@@ -1,0 +1,201 @@
+/* Theme 2: Tea & Desert - Tea Plantation Greens & Warm Desert Tones */
+
+:root[data-theme="tea-desert"] {
+  --brand-primary: #2D5016;        /* Deep forest green - tea plantations */
+  --brand-primary-light: #4A7C2A;
+  --brand-primary-dark: #1A3009;
+  --brand-secondary: #D4A574;      /* Desert sand */
+  --brand-secondary-light: #E8C19A;
+  --brand-secondary-dark: #B8944F;
+  --brand-accent: #8B6914;          /* Golden brown */
+  --brand-accent-light: #A68B2A;
+  --brand-accent-dark: #6B4F0A;
+  --brand-bg: #F5F1E8;              /* Warm cream - desert sand */
+  --brand-bg-light: #FAF8F3;
+  --brand-bg-dark: #E8E3D6;
+  --brand-text: #2C2416;            /* Deep brown */
+  --brand-text-light: #5A4A3A;
+  --brand-text-muted: #8B7A6A;
+  --brand-border: #D4C4B0;
+  --brand-border-light: #E8DDD0;
+  --brand-shadow: rgba(45, 80, 22, 0.2);
+  --brand-shadow-accent: rgba(212, 165, 116, 0.25);
+}
+
+[data-theme="tea-desert"] {
+  --brand-red: var(--brand-primary);
+  --brand-slate: var(--brand-text);
+  --brand-light: var(--brand-bg);
+}
+
+/* Body and base */
+[data-theme="tea-desert"] body {
+  background-color: var(--brand-bg) !important;
+  color: var(--brand-text) !important;
+}
+
+/* Backgrounds */
+[data-theme="tea-desert"] .bg-brand-light,
+[data-theme="tea-desert"] .bg-gradient-to-b.from-brand-light {
+  background-color: var(--brand-bg) !important;
+  background-image: linear-gradient(to bottom, var(--brand-bg), var(--brand-bg-light)) !important;
+}
+
+[data-theme="tea-desert"] .bg-white {
+  background-color: var(--brand-bg-light) !important;
+}
+
+[data-theme="tea-desert"] .bg-white\/90 {
+  background-color: rgba(245, 241, 232, 0.9) !important;
+}
+
+/* Text colors */
+[data-theme="tea-desert"] .text-brand-slate {
+  color: var(--brand-text) !important;
+}
+
+[data-theme="tea-desert"] .text-brand-slate\/80 {
+  color: var(--brand-text-light) !important;
+}
+
+[data-theme="tea-desert"] .text-brand-slate\/70 {
+  color: var(--brand-text-muted) !important;
+}
+
+[data-theme="tea-desert"] .text-brand-red {
+  color: var(--brand-primary) !important;
+}
+
+[data-theme="tea-desert"] .hover\:text-brand-red:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* Borders */
+[data-theme="tea-desert"] .border-gray-100,
+[data-theme="tea-desert"] .border-t.border-gray-100,
+[data-theme="tea-desert"] .border-b.border-gray-100 {
+  border-color: var(--brand-border) !important;
+}
+
+[data-theme="tea-desert"] .border-brand-red\/10 {
+  border-color: rgba(45, 80, 22, 0.1) !important;
+}
+
+[data-theme="tea-desert"] .border-brand-red\/20 {
+  border-color: rgba(45, 80, 22, 0.2) !important;
+}
+
+[data-theme="tea-desert"] .border-brand-slate\/20 {
+  border-color: rgba(44, 36, 22, 0.2) !important;
+}
+
+/* Buttons */
+[data-theme="tea-desert"] .btn-primary {
+  background-color: var(--brand-primary) !important;
+  color: white !important;
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 15px 35px var(--brand-shadow) !important;
+}
+
+[data-theme="tea-desert"] .btn-primary:hover {
+  background-color: var(--brand-primary-dark) !important;
+  box-shadow: 0 15px 35px rgba(45, 80, 22, 0.35) !important;
+}
+
+[data-theme="tea-desert"] .btn-outline {
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+}
+
+[data-theme="tea-desert"] .btn-outline:hover {
+  background-color: var(--brand-primary) !important;
+  color: white !important;
+}
+
+[data-theme="tea-desert"] .btn-outline.border-white {
+  border-color: white !important;
+  color: white !important;
+}
+
+[data-theme="tea-desert"] .btn-outline.border-white:hover {
+  background-color: white !important;
+  color: var(--brand-text) !important;
+}
+
+/* Focus states */
+[data-theme="tea-desert"] .focus-visible\:outline-brand-red:focus-visible,
+[data-theme="tea-desert"] .focus\:bg-brand-red:focus {
+  outline-color: var(--brand-primary) !important;
+  background-color: var(--brand-primary) !important;
+}
+
+[data-theme="tea-desert"] .hover\:border-brand-red:hover {
+  border-color: var(--brand-primary) !important;
+}
+
+/* Gradients */
+[data-theme="tea-desert"] .bg-gradient-to-br.from-brand-red.to-brand-red\/80,
+[data-theme="tea-desert"] section.bg-gradient-to-br.from-brand-red {
+  background-image: linear-gradient(to bottom right, var(--brand-primary), var(--brand-accent)) !important;
+}
+
+/* SVG */
+[data-theme="tea-desert"] svg path[stroke="#E63946"] {
+  stroke: var(--brand-primary) !important;
+}
+
+/* White text on colored backgrounds */
+[data-theme="tea-desert"] .text-white {
+  color: white !important;
+}
+
+[data-theme="tea-desert"] .text-white\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="tea-desert"] .border-white {
+  border-color: white !important;
+}
+
+[data-theme="tea-desert"] .hover\:bg-white:hover {
+  background-color: white !important;
+}
+
+[data-theme="tea-desert"] .hover\:text-brand-slate:hover {
+  color: var(--brand-text) !important;
+}
+
+/* Header */
+[data-theme="tea-desert"] header {
+  background-color: rgba(245, 241, 232, 0.9) !important;
+}
+
+/* Links */
+[data-theme="tea-desert"] a.transition.hover\:text-brand-red:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* Theme switcher */
+[data-theme="tea-desert"] .theme-switcher {
+  background-color: var(--brand-primary) !important;
+}
+
+/* Hero Section - Sri Lankan Map Outline - Tea & Desert Theme */
+[data-theme="tea-desert"] .hero-section .sri-lanka-outline {
+  opacity: 0.35 !important;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(2000%) hue-rotate(60deg) brightness(1) !important;
+  mix-blend-mode: multiply;
+}
+
+[data-theme="tea-desert"] .hero-section .sri-lanka-map-overlay {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at center, rgba(45, 80, 22, 0.22) 0%, rgba(212, 165, 116, 0.15) 40%, transparent 70%) !important;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
