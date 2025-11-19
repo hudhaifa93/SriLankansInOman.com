@@ -1,0 +1,17 @@
+/* Custom fallback styles for SriLankansInOman.com */
+:root {
+  --brand-red: #E63946;
+  --brand-slate: #1F2A37;
+  --brand-light: #F8FAFC;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--brand-light);
+  color: var(--brand-slate);
+}
+
+.btn-shadow,
+.btn-primary {
+  box-shadow: 0 15px 35px rgba(230, 57, 70, 0.28);
+}
