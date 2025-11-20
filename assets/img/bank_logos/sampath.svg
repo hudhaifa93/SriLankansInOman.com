@@ -1,0 +1,6 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="24" fill="#FF7043"/>
+  <circle cx="80" cy="80" r="40" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+  <path d="M80 46V80L104 96" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50%" y="135" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="28" fill="#FFFFFF">SAMPATH</text>
+</svg>
