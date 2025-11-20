@@ -75,9 +75,6 @@
       .rate-card {
         @apply rounded-3xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full;
       }
-      .stat-card {
-        @apply rounded-3xl border border-white/60 bg-white/95 p-5 backdrop-blur-sm shadow-sm;
-      }
     }
   </style>
   <script type="application/ld+json">
@@ -154,11 +151,6 @@
               "@type": "PropertyValue",
               "name": "buyRate",
               "unitText": "LKR per OMR"
-            },
-            {
-              "@type": "PropertyValue",
-              "name": "sellRate",
-              "unitText": "LKR per OMR"
             }
           ],
           "distribution": [
@@ -225,35 +217,57 @@
 <body class="bg-brand-light font-body text-brand-slate">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-full focus:bg-brand-red focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none">Skip to main content</a>
   <!-- Header -->
-  <header class="border-b border-gray-100 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-      <a href="index.html" class="flex items-center gap-3" aria-label="SriLankansInOman logo">
-        <img src="assets/icons/logo.png" alt="SriLankansInOman logo mark" class="h-10 w-10 rounded-xl border border-brand-red/20" />
-        <span class="text-3xl font-bold tracking-tight text-brand-slate">SriLankansInOman</span>
-      </a>
-      <button type="button" class="lg:hidden rounded-full border border-brand-slate/20 p-2 text-brand-slate transition hover:border-brand-red hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileNav" data-nav-toggle="mobileNav">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"></path>
-        </svg>
-      </button>
-      <nav class="hidden gap-6 text-sm font-medium text-brand-slate lg:flex" aria-label="Primary navigation">
-        <a href="index.html" class="transition hover:text-brand-red">Home</a>
-        <a href="exchange-rates.html" class="transition hover:text-brand-red text-brand-red font-semibold">Exchange Rates</a>
-        <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
-        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
-        <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
-      </nav>
-    </div>
-    <nav id="mobileNav" class="border-t border-gray-100 bg-white px-6 text-sm font-medium text-brand-slate lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 pointer-events-none py-0" aria-label="Mobile navigation">
-      <div class="flex flex-col gap-2">
-        <a href="index.html" class="block py-2 transition hover:text-brand-red">Home</a>
-        <a href="exchange-rates.html" class="block py-2 transition hover:text-brand-red">Exchange Rates</a>
-        <a href="business-directory.html" class="block py-2 transition hover:text-brand-red">Business Directory</a>
-        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="block py-2 transition hover:text-brand-red">Marketplace</a>
-        <a href="contact.html" class="block py-2 transition hover:text-brand-red">Contact</a>
+<header class="border-b border-gray-100 bg-white/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5">
+    <a href="index.html" class="flex items-center gap-3" aria-label="SriLankansInOman logo">
+      <img src="assets/icons/logo.png" alt="SriLankansInOman logo mark" class="h-10 w-10 rounded-xl border border-brand-red/20" />
+      <span class="text-3xl font-bold tracking-tight text-brand-slate">SriLankansInOman</span>
+    </a>
+    <button type="button" class="lg:hidden rounded-full border border-brand-slate/20 p-2 text-brand-slate transition hover:border-brand-red hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileNav" data-nav-toggle="mobileNav">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+    </button>
+    <nav class="hidden lg:flex flex-col gap-2 text-sm font-medium text-brand-slate" aria-label="Primary navigation">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Main</span>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="index.html" class="transition hover:text-brand-red">Home</a>
+          <a href="exchange-rates.html" class="transition hover:text-brand-red text-brand-red font-semibold" aria-current="page">Exchange Rates</a>
+          <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Community</span>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="bank-representatives.html" class="transition hover:text-brand-red">Bank Representatives</a>
+          <a href="https://market.srilankansinoman.com/" class="transition hover:text-brand-red" target="_blank" rel="noopener">Marketplace</a>
+          <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
+        </div>
       </div>
     </nav>
-  </header>
+  </div>
+  <nav id="mobileNav" class="border-t border-gray-100 bg-white px-6 text-sm font-medium text-brand-slate lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 pointer-events-none py-0" aria-label="Mobile navigation">
+    <div class="flex flex-col gap-6 py-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Main</p>
+        <div class="mt-2 flex flex-col gap-2">
+          <a href="index.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Home</a>
+          <a href="exchange-rates.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red text-brand-red font-semibold" aria-current="page">Exchange Rates</a>
+          <a href="business-directory.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Business Directory</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Community</p>
+        <div class="mt-2 flex flex-col gap-2">
+          <a href="bank-representatives.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Bank Representatives</a>
+          <a href="https://market.srilankansinoman.com/" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red" target="_blank" rel="noopener">Marketplace</a>
+          <a href="contact.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
 
   <main id="main-content">
     <!-- Hero Section -->
@@ -271,34 +285,6 @@
           <a href="https://wa.me/message/RNHXTFFSGIUKK1" target="_blank" rel="noopener" class="btn-outline">Submit/Update a Rate</a>
         </div>
         <p class="text-xs text-brand-slate/60">Always verify with the representative before making a payment. Rates change multiple times per day.</p>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="bg-white border-y border-gray-100">
-      <div class="mx-auto max-w-6xl px-6 py-12">
-        <div class="grid gap-6 md:grid-cols-4">
-          <div class="stat-card">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-red">Average send rate</p>
-            <p class="mt-3 text-3xl font-semibold text-brand-slate"><span id="avgBuyRate">—</span></p>
-            <p class="text-xs text-brand-slate/60">LKR per 1 OMR</p>
-          </div>
-          <div class="stat-card">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-red">Average receive rate</p>
-            <p class="mt-3 text-3xl font-semibold text-brand-slate"><span id="avgSellRate">—</span></p>
-            <p class="text-xs text-brand-slate/60">LKR per 1 OMR</p>
-          </div>
-          <div class="stat-card">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-red">Spread range</p>
-            <p class="mt-3 text-3xl font-semibold text-brand-slate"><span id="avgSpread">—</span></p>
-            <p class="text-xs text-brand-slate/60">Difference between quotes</p>
-          </div>
-          <div class="stat-card">
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-red">Last community update</p>
-            <p class="mt-3 text-lg font-semibold text-brand-slate" id="latestUpdate">—</p>
-            <p class="text-xs text-brand-slate/60" id="totalReps">— representatives</p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -362,23 +348,45 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-100 bg-white">
-    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-center text-sm text-brand-slate/70 md:flex-row md:items-center md:justify-between">
+<footer class="border-t border-gray-100 bg-white">
+  <div class="mx-auto max-w-6xl px-6 py-12 text-sm text-brand-slate/80">
+    <div class="grid gap-10 md:grid-cols-3 lg:grid-cols-4">
       <div>
-        <div>&copy; <span id="year"></span> SriLankansInOman.com. All rights reserved.</div>
-        <div class="mt-2">Powered by <a href="https://www.fikrfusion.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">FikrFusion</a></div>
+        <p class="text-2xl font-bold tracking-tight text-brand-slate">SriLankansInOman</p>
+        <p class="mt-3 text-sm leading-relaxed text-brand-slate/70">A personal initiative to make it easier for Sri Lankan expats in Oman to find reliable information, services, and community-led support.</p>
       </div>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="index.html" class="transition hover:text-brand-red">Home</a>
-        <a href="exchange-rates.html" class="transition hover:text-brand-red">Exchange Rates</a>
-        <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
-        <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
-        <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
-        <a href="privacy.html" class="transition hover:text-brand-red">Privacy</a>
-        <a href="terms.html" class="transition hover:text-brand-red">Terms</a>
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Explore</p>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="index.html" class="transition hover:text-brand-red">Home</a>
+          <a href="exchange-rates.html" class="transition hover:text-brand-red">Exchange Rates</a>
+          <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
+          <a href="bank-representatives.html" class="transition hover:text-brand-red">Bank Representatives</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Community</p>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
+          <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
+          <a href="https://wa.me/message/RNHXTFFSGIUKK1" target="_blank" rel="noopener" class="transition hover:text-brand-red">WhatsApp Updates</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Legal & Resources</p>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="privacy.html" class="transition hover:text-brand-red">Privacy Policy</a>
+          <a href="terms.html" class="transition hover:text-brand-red">Terms & Conditions</a>
+          <a href="sitemap.xml" class="transition hover:text-brand-red">Sitemap</a>
+        </div>
       </div>
     </div>
-  </footer>
+    <div class="mt-10 flex flex-col gap-3 border-t border-gray-100 pt-6 text-center text-xs text-brand-slate/60 md:flex-row md:items-center md:justify-between md:text-left">
+      <div>&copy; <span id="year"></span> SriLankansInOman.com. All rights reserved.</div>
+      <div>Powered by <a href="https://www.fikrfusion.com/" target="_blank" rel="noopener" class="font-medium text-brand-slate hover:text-brand-red">FikrFusion</a></div>
+    </div>
+  </div>
+</footer>
 
   <!-- Theme Switcher Button -->
   <button 
@@ -409,7 +417,6 @@
         email: 'sajith@lankaremit.lk',
         currencyPair: 'OMR → LKR',
         buyRate: 872.45,
-        sellRate: 881.90,
         rateType: 'Cash + Bank Transfer',
         lastUpdated: '2025-11-19T11:45:00+04:00',
         notes: 'Salary remittance support with bank credit within 6 hours.',
@@ -427,7 +434,6 @@
         email: 'dilini@seylanexchange.com',
         currencyPair: 'OMR → LKR',
         buyRate: 870.10,
-        sellRate: 878.40,
         rateType: 'Bank Transfer',
         lastUpdated: '2025-11-19T09:20:00+04:00',
         notes: 'Handles Sri Lankan bank cash pickup and account credit via Seylan partners.',
@@ -445,7 +451,6 @@
         email: '',
         currencyPair: 'OMR → LKR',
         buyRate: 868.90,
-        sellRate: 875.20,
         rateType: 'Community Rate',
         lastUpdated: '2025-11-18T18:05:00+04:00',
         notes: 'Shared voluntarily. Confirm availability before meeting.',
@@ -488,7 +493,6 @@
     function generateShareMessage(rate) {
       let message = `*${rate.companyName}*\\n${rate.representativeName} (OMR → LKR)\\n\\n`;
       message += `Send rate: ${formatter.format(rate.buyRate)} LKR for 1 OMR\\n`;
-      message += `Receive rate: ${formatter.format(rate.sellRate)} LKR for 1 OMR\\n`;
       if (rate.notes) {
         message += `Notes: ${rate.notes}\\n`;
       }
@@ -509,101 +513,86 @@
       container.classList.remove('hidden');
       noResults.classList.add('hidden');
 
-      container.innerHTML = list.map(rate => {
-        const whatsappLink = formatWhatsAppLink(rate.whatsapp);
-        const shareUrl = `https://wa.me/?text=${generateShareMessage(rate)}`;
-        const spread = formatter.format(rate.sellRate - rate.buyRate);
+        container.innerHTML = list.map(rate => {
+          const whatsappLink = formatWhatsAppLink(rate.whatsapp);
+          const shareUrl = `https://wa.me/?text=${generateShareMessage(rate)}`;
 
-        return `
-          <article class="rate-card" id="${rate.slug}">
-            <div class="flex flex-wrap items-start gap-4">
-              <div class="flex-shrink-0 w-20 h-20 rounded-2xl border border-gray-100 bg-white overflow-hidden flex items-center justify-center shadow-sm">
-                ${rate.image ? `<img src="${rate.image}" alt="${rate.companyName} logo" class="h-full w-full object-cover" loading="lazy" />` : `
-                  <div class="w-full h-full bg-gray-50 flex items-center justify-center">
-                    <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm-6 8c0-2.761 2.462-5 5.5-5h1c3.038 0 5.5 2.239 5.5 5v1H6v-1z" />
-                    </svg>
-                  </div>`}
+          return `
+            <article class="rate-card" id="${rate.slug}">
+              <div class="flex flex-wrap items-start gap-4">
+                <div class="flex-shrink-0 w-20 h-20 rounded-2xl border border-gray-100 bg-white overflow-hidden flex items-center justify-center shadow-sm">
+                  ${rate.image ? `<img src="${rate.image}" alt="${rate.companyName} logo" class="h-full w-full object-cover" loading="lazy" />` : `
+                    <div class="w-full h-full bg-gray-50 flex items-center justify-center">
+                      <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm-6 8c0-2.761 2.462-5 5.5-5h1c3.038 0 5.5 2.239 5.5 5v1H6v-1z" />
+                      </svg>
+                    </div>`}
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-xs uppercase tracking-[0.3em] text-brand-red">Representative</p>
+                  <h3 class="text-xl font-semibold text-brand-slate mt-1">${rate.representativeName}</h3>
+                  <p class="text-sm text-brand-slate/70">${rate.companyName}</p>
+                  <p class="text-xs text-brand-slate/50 mt-1">${rate.city}</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold text-brand-red">${rate.rateType}</span>
               </div>
-              <div class="flex-1 min-w-0">
-                <p class="text-xs uppercase tracking-[0.3em] text-brand-red">Representative</p>
-                <h3 class="text-xl font-semibold text-brand-slate mt-1">${rate.representativeName}</h3>
-                <p class="text-sm text-brand-slate/70">${rate.companyName}</p>
-                <p class="text-xs text-brand-slate/50 mt-1">${rate.city}</p>
-              </div>
-              <span class="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold text-brand-red">${rate.rateType}</span>
-            </div>
 
-            <div class="mt-6 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-2xl border border-brand-red/10 bg-brand-light/60 p-4">
+              <div class="mt-6 rounded-2xl border border-brand-red/10 bg-brand-light/60 p-4">
                 <p class="text-xs text-brand-slate/60">Send to Sri Lanka</p>
                 <p class="mt-2 text-3xl font-semibold text-brand-slate">
                   ${formatter.format(rate.buyRate)}
                   <span class="text-sm font-normal text-brand-slate/60">LKR / 1 OMR</span>
                 </p>
               </div>
-              <div class="rounded-2xl border border-brand-red/10 bg-white p-4 shadow-sm">
-                <p class="text-xs text-brand-slate/60">Receive from Sri Lanka</p>
-                <p class="mt-2 text-3xl font-semibold text-brand-slate">
-                  ${formatter.format(rate.sellRate)}
-                  <span class="text-sm font-normal text-brand-slate/60">LKR / 1 OMR</span>
-                </p>
-              </div>
-            </div>
 
-            <div class="mt-4 rounded-2xl bg-brand-light/60 p-3 text-xs text-brand-slate/70 flex items-center justify-between">
-              <span>Spread</span>
-              <span class="font-semibold text-brand-red">${spread} LKR</span>
-            </div>
-
-            <dl class="mt-6 space-y-3 text-sm text-brand-slate/80">
-              <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-brand-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <span>${rate.city}</span>
-              </div>
-              ${rate.email ? `
+              <dl class="mt-6 space-y-3 text-sm text-brand-slate/80">
                 <div class="flex items-center gap-3">
                   <svg class="w-5 h-5 text-brand-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
-                  <a href="mailto:${rate.email}" class="text-brand-red hover:underline">${rate.email}</a>
+                  <span>${rate.city}</span>
                 </div>
-              ` : ''}
-              ${rate.phone ? `
+                ${rate.email ? `
+                  <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-brand-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <a href="mailto:${rate.email}" class="text-brand-red hover:underline">${rate.email}</a>
+                  </div>
+                ` : ''}
+                ${rate.phone ? `
+                  <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-brand-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3.6 7.59-1.35 2.45A1 1 0 008 17h10" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h7l-1.35-2.45M5 5h15M9 21h6" />
+                    </svg>
+                    <span>${rate.phone}</span>
+                  </div>
+                ` : ''}
                 <div class="flex items-center gap-3">
                   <svg class="w-5 h-5 text-brand-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3.6 7.59-1.35 2.45A1 1 0 008 17h10" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h7l-1.35-2.45M5 5h15M9 21h6" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10m-12 8h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span>${rate.phone}</span>
+                  <span>Updated ${formatDateTime(rate.lastUpdated)}</span>
+                </div>
+              </dl>
+
+              ${rate.services && rate.services.length ? `
+                <div class="mt-6 flex flex-wrap gap-2">
+                  ${rate.services.map(service => `<span class='rounded-full bg-brand-light px-3 py-1 text-xs text-brand-slate/80 border border-brand-red/10'>${service}</span>`).join('')}
                 </div>
               ` : ''}
-              <div class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-brand-slate/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10m-12 8h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>Updated ${formatDateTime(rate.lastUpdated)}</span>
+
+              ${rate.notes ? `<p class="mt-4 text-xs text-brand-slate/60 leading-relaxed">${rate.notes}</p>` : ''}
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                ${whatsappLink ? `<a href="${whatsappLink}" target="_blank" rel="noopener" class="btn-primary text-sm">WhatsApp Representative</a>` : ''}
+                <a href="${shareUrl}" target="_blank" rel="noopener" class="btn-outline text-sm">Share Rates</a>
               </div>
-            </dl>
-
-            ${rate.services && rate.services.length ? `
-              <div class="mt-6 flex flex-wrap gap-2">
-                ${rate.services.map(service => `<span class='rounded-full bg-brand-light px-3 py-1 text-xs text-brand-slate/80 border border-brand-red/10'>${service}</span>`).join('')}
-              </div>
-            ` : ''}
-
-            ${rate.notes ? `<p class="mt-4 text-xs text-brand-slate/60 leading-relaxed">${rate.notes}</p>` : ''}
-
-            <div class="mt-6 flex flex-wrap gap-3">
-              ${whatsappLink ? `<a href="${whatsappLink}" target="_blank" rel="noopener" class="btn-primary text-sm">WhatsApp Representative</a>` : ''}
-              <a href="${shareUrl}" target="_blank" rel="noopener" class="btn-outline text-sm">Share Rates</a>
-            </div>
-          </article>
-        `;
-      }).join('');
+            </article>
+          `;
+        }).join('');
     }
 
     function filterRates(term) {
@@ -626,39 +615,13 @@
       }
     }
 
-    function updateStats(data) {
-      if (!data.length) {
-        document.getElementById('avgBuyRate').textContent = '—';
-        document.getElementById('avgSellRate').textContent = '—';
-        document.getElementById('avgSpread').textContent = '—';
-        document.getElementById('latestUpdate').textContent = '—';
-        document.getElementById('totalReps').textContent = '0 representatives';
-        return;
-      }
-      const avgBuy = data.reduce((sum, rate) => sum + rate.buyRate, 0) / data.length;
-      const avgSell = data.reduce((sum, rate) => sum + rate.sellRate, 0) / data.length;
-      const avgSpread = data.reduce((sum, rate) => sum + (rate.sellRate - rate.buyRate), 0) / data.length;
-      const latest = data.reduce((latestRate, current) => {
-        if (!latestRate) return current;
-        return new Date(current.lastUpdated) > new Date(latestRate.lastUpdated) ? current : latestRate;
-      }, null);
-
-      document.getElementById('avgBuyRate').textContent = `${formatter.format(avgBuy)} LKR`;
-      document.getElementById('avgSellRate').textContent = `${formatter.format(avgSell)} LKR`;
-      document.getElementById('avgSpread').textContent = `${formatter.format(avgSpread)} LKR`;
-      document.getElementById('latestUpdate').textContent = latest ? formatDateTime(latest.lastUpdated) : '—';
-      document.getElementById('totalReps').textContent = `${data.length} representative${data.length === 1 ? '' : 's'}`;
-    }
-
     renderRates(exchangeRates);
     updateResultsCount(exchangeRates.length);
-    updateStats(exchangeRates);
 
     document.getElementById('searchInput').addEventListener('input', (event) => {
       const filtered = filterRates(event.target.value);
       renderRates(filtered);
       updateResultsCount(filtered.length);
-      updateStats(filtered.length ? filtered : exchangeRates);
     });
   </script>
 
