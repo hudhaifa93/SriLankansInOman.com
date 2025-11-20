@@ -139,37 +139,57 @@
 <body class="bg-brand-light font-body text-brand-slate">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-full focus:bg-brand-red focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none">Skip to main content</a>
   <!-- Header -->
-  <header class="border-b border-gray-100 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-      <a href="index.html" class="flex items-center gap-3" aria-label="SriLankansInOman logo">
-        <img src="assets/icons/logo.png" alt="SriLankansInOman logo mark" class="h-10 w-10 rounded-xl border border-brand-red/20" />
-        <span class="text-3xl font-bold tracking-tight text-brand-slate">SriLankansInOman</span>
-      </a>
-      <button type="button" class="lg:hidden rounded-full border border-brand-slate/20 p-2 text-brand-slate transition hover:border-brand-red hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileNav" data-nav-toggle="mobileNav">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"></path>
-        </svg>
-      </button>
-        <nav class="hidden gap-6 text-sm font-medium text-brand-slate lg:flex" aria-label="Primary navigation">
+<header class="border-b border-gray-100 bg-white/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5">
+    <a href="index.html" class="flex items-center gap-3" aria-label="SriLankansInOman logo">
+      <img src="assets/icons/logo.png" alt="SriLankansInOman logo mark" class="h-10 w-10 rounded-xl border border-brand-red/20" />
+      <span class="text-3xl font-bold tracking-tight text-brand-slate">SriLankansInOman</span>
+    </a>
+    <button type="button" class="lg:hidden rounded-full border border-brand-slate/20 p-2 text-brand-slate transition hover:border-brand-red hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileNav" data-nav-toggle="mobileNav">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+    </button>
+    <nav class="hidden lg:flex flex-col gap-2 text-sm font-medium text-brand-slate" aria-label="Primary navigation">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Main</span>
+        <div class="flex flex-wrap items-center gap-4">
           <a href="index.html" class="transition hover:text-brand-red">Home</a>
           <a href="exchange-rates.html" class="transition hover:text-brand-red">Exchange Rates</a>
           <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
-          <a href="bank-representatives.html" class="transition hover:text-brand-red">Bank Representatives</a>
-          <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
-          <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
-        </nav>
-    </div>
-    <nav id="mobileNav" class="border-t border-gray-100 bg-white px-6 text-sm font-medium text-brand-slate lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 pointer-events-none py-0" aria-label="Mobile navigation">
-        <div class="flex flex-col gap-2">
-          <a href="index.html" class="block py-2 transition hover:text-brand-red">Home</a>
-          <a href="exchange-rates.html" class="block py-2 transition hover:text-brand-red">Exchange Rates</a>
-          <a href="business-directory.html" class="block py-2 transition hover:text-brand-red">Business Directory</a>
-          <a href="bank-representatives.html" class="block py-2 transition hover:text-brand-red">Bank Representatives</a>
-          <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="block py-2 transition hover:text-brand-red">Marketplace</a>
-          <a href="contact.html" class="block py-2 transition hover:text-brand-red">Contact</a>
         </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Community</span>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="bank-representatives.html" class="transition hover:text-brand-red">Bank Representatives</a>
+          <a href="https://market.srilankansinoman.com/" class="transition hover:text-brand-red" target="_blank" rel="noopener">Marketplace</a>
+          <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
+        </div>
+      </div>
     </nav>
-  </header>
+  </div>
+  <nav id="mobileNav" class="border-t border-gray-100 bg-white px-6 text-sm font-medium text-brand-slate lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 pointer-events-none py-0" aria-label="Mobile navigation">
+    <div class="flex flex-col gap-6 py-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Main</p>
+        <div class="mt-2 flex flex-col gap-2">
+          <a href="index.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Home</a>
+          <a href="exchange-rates.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Exchange Rates</a>
+          <a href="business-directory.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Business Directory</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Community</p>
+        <div class="mt-2 flex flex-col gap-2">
+          <a href="bank-representatives.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Bank Representatives</a>
+          <a href="https://market.srilankansinoman.com/" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red" target="_blank" rel="noopener">Marketplace</a>
+          <a href="contact.html" class="block rounded-full border border-transparent px-4 py-2 text-left transition hover:text-brand-red">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
 
   <main id="main-content">
     <section class="bg-gradient-to-b from-brand-light to-white">
@@ -213,24 +233,45 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-100 bg-white">
-    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-center text-sm text-brand-slate/70 md:flex-row md:items-center md:justify-between">
+<footer class="border-t border-gray-100 bg-white">
+  <div class="mx-auto max-w-6xl px-6 py-12 text-sm text-brand-slate/80">
+    <div class="grid gap-10 md:grid-cols-3 lg:grid-cols-4">
       <div>
-        <div>&copy; <span id="year"></span> SriLankansInOman.com. All rights reserved.</div>
-        <div class="mt-2">Powered by <a href="https://www.fikrfusion.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">FikrFusion</a></div>
+        <p class="text-2xl font-bold tracking-tight text-brand-slate">SriLankansInOman</p>
+        <p class="mt-3 text-sm leading-relaxed text-brand-slate/70">A personal initiative to make it easier for Sri Lankan expats in Oman to find reliable information, services, and community-led support.</p>
       </div>
-        <div class="flex items-center justify-center gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Explore</p>
+        <div class="mt-3 flex flex-col gap-2">
           <a href="index.html" class="transition hover:text-brand-red">Home</a>
           <a href="exchange-rates.html" class="transition hover:text-brand-red">Exchange Rates</a>
           <a href="business-directory.html" class="transition hover:text-brand-red">Business Directory</a>
           <a href="bank-representatives.html" class="transition hover:text-brand-red">Bank Representatives</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Community</p>
+        <div class="mt-3 flex flex-col gap-2">
           <a href="https://market.srilankansinoman.com/" target="_blank" rel="noopener" class="transition hover:text-brand-red">Marketplace</a>
           <a href="contact.html" class="transition hover:text-brand-red">Contact</a>
-          <a href="privacy.html" class="transition hover:text-brand-red">Privacy</a>
-          <a href="terms.html" class="transition hover:text-brand-red">Terms</a>
+          <a href="https://wa.me/message/RNHXTFFSGIUKK1" target="_blank" rel="noopener" class="transition hover:text-brand-red">WhatsApp Updates</a>
         </div>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-brand-slate/50">Legal & Resources</p>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="privacy.html" class="transition hover:text-brand-red">Privacy Policy</a>
+          <a href="terms.html" class="transition hover:text-brand-red">Terms & Conditions</a>
+          <a href="sitemap.xml" class="transition hover:text-brand-red">Sitemap</a>
+        </div>
+      </div>
     </div>
-  </footer>
+    <div class="mt-10 flex flex-col gap-3 border-t border-gray-100 pt-6 text-center text-xs text-brand-slate/60 md:flex-row md:items-center md:justify-between md:text-left">
+      <div>&copy; <span id="year"></span> SriLankansInOman.com. All rights reserved.</div>
+      <div>Powered by <a href="https://www.fikrfusion.com/" target="_blank" rel="noopener" class="font-medium text-brand-slate hover:text-brand-red">FikrFusion</a></div>
+    </div>
+  </div>
+</footer>
 
   <!-- Theme Switcher Button -->
   <button 
