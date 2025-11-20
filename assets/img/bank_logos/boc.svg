@@ -1,0 +1,5 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="24" fill="#FFD54F"/>
+  <circle cx="80" cy="80" r="58" fill="none" stroke="#BF360C" stroke-width="10"/>
+  <text x="50%" y="54%" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="46" fill="#BF360C">BOC</text>
+</svg>
